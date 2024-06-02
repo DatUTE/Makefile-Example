@@ -1,0 +1,18 @@
+bin_PROGRAMS = main
+
+# without BUILD_TARGET
+# ----------------------------------
+# main_SOURCES = main.cc \
+#                automotiveA
+# ----------------------------------
+# with BUILD_TARGET
+# ----------------------------------
+
+main_SOURCES = main.cc
+if ENABLE_AUTOMOTIVEA
+    main_SOURCES += automotiveA.cc
+endif
+if ENABLE_AUTOMOTIVEB
+    main_SOURCES += automotiveB.cc 
+endif
+# ----------------------------------
