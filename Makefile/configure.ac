@@ -30,6 +30,5 @@ AM_CONDITIONAL([ENABLE_AUTOMOTIVEA], [test_target automotiveA])
 AM_CONDITIONAL([ENABLE_AUTOMOTIVEB], [test_target automotiveB])
 AC_LANG(C++)
 AC_PROG_CXX
-AC_CONFIGS_FILE([GNUmakefile])
+AC_CONFIG_FILES([GNUmakefile])
 AC_OUTPUT
-# -------------------------------------------------------------

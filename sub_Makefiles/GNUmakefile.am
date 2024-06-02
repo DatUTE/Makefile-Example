@@ -1,0 +1,66 @@
+#======== NO SUB_MAKEFILE =========
+
+# bin_PROGRAMS = main
+
+# main_SOURCES = main.cc
+# main_SOURCES += \
+#   sw/electric/commonElectric.cc
+#
+# if ENABLE_AUTOMOTIVE1
+#   main_SOURCES += \
+#       sw/body/src/bodyModule.cc \
+#       sw/body/src/bodyService1.cc \
+#       sw/electric/src/bodyElectric.cc
+# endif
+#
+# if ENABLE_AUTOMOTIVE2
+#   main_SOURCES += \
+#       sw/body/src/bodyModule.cc \
+#       sw/body/src/bodyService2.cc \
+#       sw/electric/src/engineElectric.cc
+# endif
+#
+# if ENABLE_AUTOMOTIVE3
+#   main_SOURCES += \
+#       sw/body/src/bodyModule.cc \
+#       sw/body/src/bodyService3.cc \
+#       sw/electric/src/sensorElectric.cc
+# endif
+
+# AM_CPPFLAGS = \
+#       -I .sw/body/inc \
+#       -I .sw/electric
+
+#-------------------------------------------------------------------------------------
+#======== SUB_MAKEFILE =========
+
+bin_PROGRAMS = main
+noinst_LIBRARIES = 
+STATIC_LIBS = 
+
+include .sw/body/GNUmakefile.am
+include .sw/electric/GNUmakefile.am
+
+# .PHONY: testr
+# if ENABLE_AUTOMOTIVE1
+# testr:
+#       echo "ENABLE_AUTOMOTIVE1 is on"
+# endif
+
+# if ENABLE_AUTOMOTIVE2
+# testr:
+#       echo "ENABLE_AUTOMOTIVE2 is on"
+# endif
+
+# if ENABLE_AUTOMOTIVE3
+# testr:
+#       echo "ENABLE_AUTOMOTIVE3 is on"
+# endif
+
+main_CPPFLAGS = \
+    -I ./sw/body/inc \
+    -I ./sw/electric/inc
+
+main_SOURCES = main.cc
+
+main_LDADD = $(STATIC_LIBS)

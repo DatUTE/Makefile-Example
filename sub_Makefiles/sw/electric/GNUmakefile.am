@@ -1,0 +1,37 @@
+noinst_LIBRARIES += libelectric.a 
+STATIC_LIBS += libelectric.a 
+
+libelectric_a_CXXFLAGS = -Werror
+
+libelectric_a_CPPFLAGS = \
+    -Isw/electric/inc
+
+elec_COMMON_FILES = \
+    sw/electric/src/commonElectric.cc
+
+elec_AUTOMOTIVE1_FILES = \
+    sw/electric/src/bodyElectric.cc
+
+elec_AUTOMOTIVE2_FILES = \
+    sw/electric/src/engineElectric.cc
+
+elec_AUTOMOTIVE3_FILES = \
+    sw/electric/src/sensorElectric.cc
+
+libelectric_a_SOURCES = 
+libelectric_a_SOURCES += $(elec_COMMON_FILES)
+if ENABLE_AUTOMOTIVE1
+    libelectric_a_SOURCES += $(elec_AUTOMOTIVE1_FILES)
+endif
+
+if ENABLE_AUTOMOTIVE2
+    libelectric_a_SOURCES += $(elec_AUTOMOTIVE2_FILES)
+endif
+
+if ENABLE_AUTOMOTIVE3
+    libelectric_a_SOURCES += $(elec_AUTOMOTIVE3_FILES)
+endif
+
+if ENABLE_AUTOMOTIVE1
+    libelectric_a_SOURCES += $(elec_COMMON_FILES)
+endif

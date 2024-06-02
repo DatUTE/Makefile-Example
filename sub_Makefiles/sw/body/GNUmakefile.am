@@ -1,0 +1,33 @@
+noinst_LIBRARIES += libbody.a
+STATIC_LIBS += libbody.a
+
+libbody_a_CXXFLAGS = -Werror
+
+libbody_a_CPPFLAGS = \
+    -Isw/body/body/inc
+
+body_AUTOMOTIVE1_FILES = \
+    sw/body/src/bodyModule.cc \
+    sw/body/src/bodyService1.cc
+
+body_AUTOMOTIVE2_FILES = \
+    sw/body/src/bodyModule.cc \
+    sw/body/src/bodyService2.cc
+
+body_AUTOMOTIVE3_FILES = \
+    sw/body/src/bodyModule.cc \
+    sw/body/src/bodyService3.cc
+
+libbody_a_SOURCES = 
+
+if ENABLE_AUTOMOTIVE1
+    libbody_a_SOURCES += $(body_AUTOMOTIVE1_FILES)
+endif
+
+if ENABLE_AUTOMOTIVE2
+    libbody_a_SOURCES += $(body_AUTOMOTIVE2_FILES)
+endif
+
+if ENABLE_AUTOMOTIVE2
+    libbody_a_SOURCES += $(body_AUTOMOTIVE3_FILES)
+endif
