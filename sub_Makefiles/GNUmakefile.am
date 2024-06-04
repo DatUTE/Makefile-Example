@@ -38,8 +38,8 @@ bin_PROGRAMS = main
 noinst_LIBRARIES = 
 STATIC_LIBS = 
 
-include .sw/body/GNUmakefile.am
-include .sw/electric/GNUmakefile.am
+include . sw/body/GNUmakefile.am
+include . sw/electric/GNUmakefile.am
 
 # .PHONY: testr
 # if ENABLE_AUTOMOTIVE1

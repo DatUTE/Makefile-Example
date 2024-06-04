@@ -5,8 +5,8 @@
 -1. Makefile
     + prepare: Run the command below to initialize what is required for Automake
     aclocal
-    autoreconf
     automake --add-missing
+    autoreconf
     touch NEWS REAMKE AUTHORS ChangeLog (optional)
     automake
 
