@@ -16,7 +16,7 @@
     main
 
     + execute with BUILD-TARGET:
-    ./configure BUILD_TARGET = automotiveA
+    ./configure BUILD_TARGET=automotiveA
     make
     main
 -2. Sub-Makefile
@@ -24,7 +24,7 @@
     - if we change source file in sw just call "make"
     - else we need to run
         autoreconf
-        ./configure BUILD_TARGET = automotive1 or 2 or 3
+        ./configure BUILD_TARGET=automotive1 or 2 or 3
         make
         main
 
