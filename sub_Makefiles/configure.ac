@@ -1,7 +1,6 @@
 AC_INIT([automtive], [0.1])
 
-#AM_INIT_AUTOMAKE([subdir-objects])
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([subdir-objects])
 
 # with BUILD_TARGET
 # --------------------------------------
